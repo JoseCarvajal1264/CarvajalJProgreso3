@@ -18,12 +18,12 @@
 
             <ActivityIndicator x:Name="loading" HeightRequest="30" Color="Blue" IsRunning="True"
                                IsVisible="False"/>
-
+            <Entry x:Name="entryPais" Placeholder="Ingresa un país" />
             <ListView x:Name="listviewPais" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Orientation="Horizontal" Padding="10"> 
+                            <StackLayout Orientation="Horizontal" Padding="10">
                                 <Image Source="{Binding}" WidthRequest="50" HeightRequest="50" Aspect="AspectFill"/>
                                 <Label Text="{Binding name}" VerticalTextAlignment="Center" Margin="10,0,0,0"/>
                             </StackLayout>

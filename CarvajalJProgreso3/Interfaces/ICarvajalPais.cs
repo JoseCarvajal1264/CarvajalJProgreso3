@@ -8,7 +8,7 @@ using CarvajalJProgreso3.Models;
 
 namespace CarvajalJProgreso3.Interfaces
 {
-    internal interface ICarvajalPais
+    public interface ICarvajalPais
     {
         public Task<List<CarvajalPaisAPI>> Obtener();
     }
