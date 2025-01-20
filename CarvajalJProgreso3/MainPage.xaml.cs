@@ -1,24 +1,27 @@
-﻿namespace CarvajalJProgreso3
+﻿using CarvajalJProgreso3.Interfaces;
+using System.Runtime.CompilerServices;
+
+namespace CarvajalJProgreso3
 {
     public partial class MainPage : ContentPage
     {
         int count = 0;
 
-        public MainPage()
+        private readonly ICarvajalPais _carvajalPais;
+
+        public MainPage(ICarvajalPais service)
         {
             InitializeComponent();
+            _carvajalPais = service;
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        private async void OnCounterClicked(object sender, EventArgs e)
         {
-            count++;
+            loading.IsVisible = true;
+            var data = await _carvajalPais.Obtener();
+            listviewPais.ItemsSource = data;
+            loading.IsVisible = false;
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
         }
     }
 
