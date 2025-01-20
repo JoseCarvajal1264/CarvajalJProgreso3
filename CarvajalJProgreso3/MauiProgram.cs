@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using CarvajalJProgreso3.Interfaces;
 
 namespace CarvajalJProgreso3
 {
@@ -15,6 +16,8 @@ namespace CarvajalJProgreso3
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
+            builder.Services.AddSingleton<ICarvajalPais,CarvajalPaisI>();
+            builder.Services.AddTransient<MainPage>();
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
