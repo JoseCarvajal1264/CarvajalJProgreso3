@@ -9,7 +9,7 @@ namespace CarvajalJProgreso3
 
         private readonly ICarvajalPais _carvajalPais;
 
-        public MainPage(ICarvajalPais service)
+        public MainPage (ICarvajalPais service)
         {
             InitializeComponent();
             _carvajalPais = service;
